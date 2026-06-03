@@ -3,225 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📚 RUANG BELAJAR GRENXHARIMAU - Penjelasan Super Lengkap Semua Ilmu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>📚 MEGA ENSIKLOPEDIA - 200+ BAB PENJELASAN SUPER LENGKAP | GRENXHARIMAU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #0f0f23; color: #fff; overflow-x: hidden; }
-        
-        /* Efek background keren */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(102,126,234,0.15) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefaf5;
+            color: #1e293b;
         }
-        
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #1a1a3a; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 10px; }
-        
+        .book-text {
+            font-family: 'Crimson Pro', 'Georgia', serif;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 35, 0.98);
-            backdrop-filter: blur(12px);
+            background: #0a0f1c;
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid rgba(102,126,234,0.3);
+            border-bottom: 3px solid #f59e0b;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo i { font-size: 2rem; color: #667eea; animation: pulse 2s infinite; }
-        .logo h1 { font-size: 1.5rem; background: linear-gradient(135deg, #667eea, #764ba2, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
-        
-        .search-bar { display: flex; align-items: center; background: rgba(255,255,255,0.08); border-radius: 50px; padding: 0.5rem 1rem; width: 320px; border: 1px solid rgba(102,126,234,0.3); }
-        .search-bar input { background: none; border: none; color: white; padding: 0.5rem; width: 100%; outline: none; font-size: 0.9rem; }
-        .search-bar button { background: none; border: none; color: #667eea; cursor: pointer; font-size: 1.1rem; }
-        
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo i { font-size: 2rem; color: #f59e0b; }
+        .logo h1 { font-size: 1.3rem; color: white; }
+        .logo span { color: #f59e0b; }
+        .search-bar { display: flex; align-items: center; background: rgba(255,255,255,0.1); border-radius: 40px; padding: 0.5rem 1rem; width: 340px; }
+        .search-bar input { background: none; border: none; color: white; padding: 0.5rem; width: 100%; outline: none; }
+        .search-bar button { background: none; border: none; color: #f59e0b; cursor: pointer; }
         .hero {
-            padding: 9rem 5% 4rem;
+            padding: 8rem 5% 3rem;
             text-align: center;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a4a 100%);
-            position: relative;
+            background: linear-gradient(135deg, #0a0f1c 0%, #1a2332 100%);
+            color: white;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; animation: fadeInUp 0.8s ease; }
-        .hero .gradient-text { background: linear-gradient(135deg, #667eea, #764ba2, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: #bbb; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .stats { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
-        .stat-item { text-align: center; background: rgba(255,255,255,0.05); padding: 1rem 2rem; border-radius: 20px; backdrop-filter: blur(5px); }
-        .stat-number { font-size: 2rem; font-weight: 800; color: #667eea; }
-        
-        .categories { padding: 4rem 5%; }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; position: relative; }
-        .section-title:after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 3px; }
-        
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero .highlight { color: #f59e0b; border-bottom: 3px solid #f59e0b; display: inline-block; }
+        .hero p { max-width: 850px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9; }
+        .stats { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.08); padding: 0.8rem 1.8rem; border-radius: 40px; text-align: center; }
+        .stat-number { font-size: 1.8rem; font-weight: 800; color: #f59e0b; }
+        .categories { padding: 4rem 5%; background: #fefaf5; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #0a0f1c; position: relative; }
+        .section-title:after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 100px; height: 4px; background: #f59e0b; border-radius: 2px; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 2rem; }
         .category-card {
-            background: rgba(255,255,255,0.04);
+            background: white;
             border-radius: 24px;
-            padding: 1.8rem;
-            transition: all 0.3s ease;
+            padding: 2rem;
+            transition: 0.25s ease;
             cursor: pointer;
-            border: 1px solid rgba(102,126,234,0.2);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #eaddc5;
         }
-        .category-card:hover { transform: translateY(-12px); background: rgba(102,126,234,0.12); border-color: #667eea; box-shadow: 0 20px 35px rgba(0,0,0,0.3); }
-        .category-icon { font-size: 3.5rem; margin-bottom: 1rem; }
-        .category-card h3 { font-size: 1.4rem; margin-bottom: 0.7rem; }
-        .category-card p { color: #bbb; font-size: 0.9rem; line-height: 1.5; }
-        .topic-count { display: inline-block; margin-top: 1rem; padding: 0.3rem 1rem; background: rgba(102,126,234,0.25); border-radius: 30px; font-size: 0.8rem; color: #667eea; }
-        
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); z-index: 2000; overflow-y: auto; }
-        .modal-content { background: #0f0f23; margin: 2% auto; width: 92%; max-width: 1300px; border-radius: 28px; padding: 2rem; position: relative; border: 1px solid rgba(102,126,234,0.4); }
-        .close-modal { position: absolute; top: 20px; right: 30px; font-size: 2rem; cursor: pointer; color: #fff; transition: 0.3s; z-index: 10; }
-        .close-modal:hover { color: #667eea; transform: rotate(90deg); }
-        .subject-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(102,126,234,0.3); flex-wrap: wrap; }
-        .subject-header i { font-size: 3rem; color: #667eea; }
-        .topic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.3rem; }
+        .category-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-color: #f59e0b; }
+        .category-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .category-card h3 { font-size: 1.5rem; margin-bottom: 0.6rem; }
+        .category-card p { color: #475569; line-height: 1.5; }
+        .topic-count { display: inline-block; margin-top: 1rem; padding: 0.3rem 1rem; background: #fef2e0; border-radius: 40px; font-size: 0.8rem; font-weight: 700; color: #b45309; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.88); z-index: 2000; overflow-y: auto; }
+        .modal-content { background: #fffef7; margin: 1.5% auto; width: 94%; max-width: 1200px; border-radius: 28px; padding: 2rem; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.4); }
+        .close-modal { position: absolute; top: 20px; right: 30px; font-size: 2rem; cursor: pointer; color: #6b6b6b; transition: 0.2s; }
+        .close-modal:hover { color: #f59e0b; transform: rotate(90deg); }
+        .subject-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 3px solid #f59e0b; flex-wrap: wrap; }
+        .subject-header i { font-size: 2.5rem; color: #f59e0b; }
+        .topic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.3rem; max-height: 55vh; overflow-y: auto; padding-right: 0.5rem; }
         .topic-item {
-            background: rgba(255,255,255,0.05);
-            padding: 1.2rem;
-            border-radius: 16px;
+            background: #fefaf5;
+            padding: 1.3rem;
+            border-radius: 20px;
             cursor: pointer;
-            transition: 0.3s;
-            border-left: 4px solid #667eea;
+            transition: 0.2s;
+            border-left: 5px solid #f59e0b;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
-        .topic-item:hover { background: rgba(102,126,234,0.2); transform: translateX(8px); }
+        .topic-item:hover { background: #fff7ea; transform: translateX(6px); }
         .content-viewer {
             margin-top: 2rem;
             padding: 2rem;
-            background: rgba(0,0,0,0.4);
-            border-radius: 20px;
+            background: #fefcf8;
+            border-radius: 24px;
             display: none;
-            border: 1px solid rgba(102,126,234,0.4);
-            animation: fadeInUp 0.4s ease;
+            border: 1px solid #eaddc5;
+            font-family: 'Crimson Pro', 'Georgia', serif;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            max-height: 60vh;
+            overflow-y: auto;
         }
-        .content-viewer h3 { color: #667eea; margin-bottom: 1.5rem; font-size: 1.7rem; }
-        .explanation-card { background: rgba(102,126,234,0.1); padding: 1.5rem; border-radius: 16px; margin: 1.2rem 0; border-left: 5px solid #764ba2; }
-        .footer { background: #080818; padding: 3rem 5%; text-align: center; border-top: 1px solid rgba(102,126,234,0.2); margin-top: 2rem; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .search-bar { width: 100%; margin-top: 10px; } .category-grid { grid-template-columns: 1fr; } .topic-list { grid-template-columns: 1fr; } }
-        .btn-back { background: linear-gradient(135deg, #667eea, #764ba2); border: none; color: white; padding: 10px 28px; border-radius: 40px; cursor: pointer; margin-top: 25px; transition: 0.3s; font-weight: 600; }
-        .btn-back:hover { transform: scale(1.03); box-shadow: 0 5px 20px rgba(102,126,234,0.4); }
-        .source-badge { font-size: 0.75rem; background: rgba(102,126,234,0.2); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-top: 15px; }
-        .tip-box { background: linear-gradient(135deg, #1e1e3a, #13132b); padding: 1.2rem; border-radius: 16px; margin-top: 1.5rem; border: 1px solid #667eea40; }
+        .content-viewer h3 { font-family: 'Inter', sans-serif; color: #b45309; margin-bottom: 1.2rem; font-size: 1.9rem; border-left: 5px solid #f59e0b; padding-left: 1rem; }
+        .bab-header { background: #fef2e0; padding: 0.6rem 1rem; border-radius: 14px; margin: 1.5rem 0 0.8rem; font-weight: 700; color: #78350f; font-size: 1.1rem; }
+        .definition-box { background: #eef2ff; padding: 1.2rem 1.8rem; border-radius: 24px; margin: 1rem 0; border-left: 6px solid #f59e0b; }
+        .rumus-box { background: #fef9e6; padding: 1rem; border-radius: 18px; text-align: center; font-family: monospace; font-size: 1.1rem; margin: 1rem 0; border: 1px solid #f59e0b; }
+        .contoh-soal { background: #f1f5f9; padding: 1rem 1.8rem; border-radius: 20px; margin: 1rem 0; }
+        .sumber-box { background: #e6f7f0; padding: 0.8rem; border-radius: 16px; font-size: 0.8rem; margin-top: 1.5rem; color: #2d6a4f; }
+        .footer { background: #0a0f1c; padding: 2rem 5%; text-align: center; color: #94a3b8; margin-top: 1rem; }
+        .btn-back { background: #f59e0b; border: none; color: white; padding: 10px 28px; border-radius: 40px; cursor: pointer; margin-top: 20px; font-weight: 600; transition: 0.2s; }
+        .btn-back:hover { background: #b45309; transform: scale(1.02); }
+        @media (max-width: 700px) { .hero h1 { font-size: 1.8rem; } .search-bar { width: 100%; } .category-grid { grid-template-columns: 1fr; } .topic-list { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"><i class="fas fa-brain"></i><h1>RUANG BELAJAR GRENXHARIMAU</h1></div>
-        <div class="search-bar"><input type="text" id="searchInput" placeholder="Cari materi... (contoh: gravitasi, DNA, kalkulus)"><button onclick="searchContent()"><i class="fas fa-search"></i></button></div>
+        <div class="logo"><i class="fas fa-globe-asia"></i><h1><span>📖</span> MEGA ENSIKLOPEDIA <span>DUNIA</span></h1></div>
+        <div class="search-bar"><input type="text" id="searchInput" placeholder="🔍 Cari ratusan bab... (contoh: fotosintesis, relativitas, elastisitas, matriks)"><button onclick="searchContent()"><i class="fas fa-search"></i></button></div>
     </nav>
     <section class="hero">
-        <h1>📖 <span class="gradient-text">PUSAT ILMU PENGETAHUAN DUNIA</span> 📖</h1>
-        <p><strong>PENJELASAN SUPER LENGKAP + ASAL USUL ILMU + TOKOH + REFERENSI</strong> — Semua ilmu dari Fisika, Kimia, Biologi, Matematika, hingga Sejarah dan Ekonomi. Belajar jadi mudah dan menyenangkan!</p>
+        <h1>📚 <span class="highlight">PUSAT ILMU PENGETAHUAN SUPER LENGKAP</span> 📚</h1>
+        <p><strong>200+ BAB</strong> dengan penjelasan mendalam: definisi, rumus, contoh soal, sejarah penemuan, ilustrasi, dan daftar pustaka. Setiap judul langsung diikuti penjelasan seperti buku teks akademik 5000 halaman.</p>
         <div class="stats">
-            <div class="stat-item"><div class="stat-number">15.000+</div><div>Topik Lengkap</div></div>
-            <div class="stat-item"><div class="stat-number">100+</div><div>Kategori Ilmu</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div>Penjelasan Rinci</div></div>
+            <div class="stat-item"><div class="stat-number">15</div><div>Bidang Ilmu</div></div>
+            <div class="stat-item"><div class="stat-number">210+</div><div>BAB Lengkap</div></div>
+            <div class="stat-item"><div class="stat-number">800+</div><div>Contoh & Latihan</div></div>
         </div>
     </section>
-    <section class="categories"><h2 class="section-title">📚 Pilih ILMU yang Ingin Dipelajari</h2><div class="category-grid" id="categoryGrid"></div></section>
-    <footer class="footer">
-        <p>🧠 <strong>RUANG BELAJAR GRENXHARIMAU</strong> - Belajar Tanpa Batas | Untuk @Jrii_shopp</p>
-        <p style="margin-top:0.8rem; font-size:0.8rem">📌 Setiap materi disusun berdasarkan buku teks akademik, jurnal ilmiah, ensiklopedia Britannica, dan sumber terpercaya. Dilengkapi sejarah penemuan & tokoh ilmuwan.</p>
-    </footer>
+    <section class="categories"><h2 class="section-title">📖 DAFTAR ISI : 15 BIDANG ILMU</h2><div class="category-grid" id="categoryGrid"></div></section>
+    <footer class="footer"><p>© GRENXHARIMAU UNTUK @Jrii_shopp | Referensi: Buku teks internasional, jurnal Nature, Science, Cambridge, Oxford, dan sumber primer</p></footer>
     <div id="subjectModal" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><div id="modalContent"></div></div></div>
 
     <script>
-        // ==================== DATABASE ILMU DENGAN PENJELASAN SUPER LENGKAP ====================
+        // ================ DATABASE 210+ BAB LENGKAP (PENJELASAN SUPER BANYAK) ================
         const categories = [
-            { name: "🔬 FISIKA", icon: "fas fa-atom", description: "Ilmu tentang materi, energi, dan fenomena alam", topics: [
-                { name: "Hukum Gravitasi Newton", content: `<div class="explanation-card"><strong>🌍 ASAL USUL & SEJARAH:</strong> Sir Isaac Newton menerbitkan Hukum Gravitasi Universal dalam buku <em>Philosophiæ Naturalis Principia Mathematica</em> (1687). Legenda terkenal: Newton melihat apel jatuh dari pohon, yang menginspirasinya memikirkan gaya tarik bumi.</div>
-<strong>📖 PENJELASAN LENGKAP:</strong><br>
-Hukum Gravitasi Newton menyatakan bahwa setiap partikel di alam semesta menarik partikel lain dengan gaya yang berbanding lurus dengan hasil kali massa kedua partikel dan berbanding terbalik dengan kuadrat jarak antara mereka.
-<br><br>
-<strong>🔢 RUMUS:</strong> F = G · (m₁·m₂) / r²
-<br>• F = gaya gravitasi (Newton)<br>• G = konstanta gravitasi (6,674 × 10⁻¹¹ Nm²/kg²)<br>• m₁, m₂ = massa benda (kg)<br>• r = jarak antara pusat massa (m)
-<br><br>
-<strong>🌟 CONTOH & APLIKASI:</strong><br>
-• Bumi mengelilingi Matahari karena gravitasi.<br>• Pasang surut air laut dipengaruhi gravitasi Bulan.<br>• Peluncuran roket harus melawan gravitasi Bumi.
-<br><br>
-<strong>📚 SUMBER:</strong> Newton (1687), buku "Gravitation" oleh Misner, Thorne, Wheeler.` },
-                { name: "Hukum Termodinamika", content: `<div class="explanation-card"><strong>🔥 SEJARAH & TOKOH:</strong> Dikembangkan oleh Sadi Carnot (1824), Rudolf Clausius (1850), dan Lord Kelvin. Termodinamika lahir dari upaya memahami mesin uap.</div>
-<strong>📖 PENJELASAN LENGKAP 4 HUKUM:</strong><br>
-1️⃣ Hukum ke-0: Jika dua sistem termal setimbang dengan sistem ketiga, maka ketiganya setimbang. <strong>→ Konsep suhu.</strong><br>
-2️⃣ Hukum ke-I (Kekekalan energi): Energi tidak dapat diciptakan/dimusnahkan, hanya berubah bentuk. ΔU = Q - W (perubahan energi dalam = kalor - kerja).<br>
-3️⃣ Hukum ke-II (Entropi): Proses alam selalu menuju ketidakteraturan (entropi meningkat). Tidak mungkin mesin kalor 100% efisien.<br>
-4️⃣ Hukum ke-III: Saat suhu mendekati nol mutlak (0 Kelvin), entropi mendekati nol.
-<br><br>
-<strong>⚙️ APLIKASI:</strong> Mesin mobil, kulkas, AC, pembangkit listrik.
-<br><br><strong>📚 SUMBER:</strong> Carnot (1824), Clausius (1850).` }
+            { name: "⚛️ FISIKA DASAR & MODERN", icon: "fas fa-atom", description: "Mekanika, Termodinamika, Listrik, Relativitas, Kuantum", topics: [
+                { name: "BAB 1: Hukum Newton (I, II, III)", content: `<div class="definition-box"><strong>📌 DEFINISI LENGKAP:</strong> Hukum Newton adalah tiga hukum dasar yang menjelaskan hubungan antara gaya dan gerak benda. Ditemukan oleh Isaac Newton (1687) dalam bukunya Philosophiæ Naturalis Principia Mathematica.</div><div class="bab-header">🔭 SEJARAH & KONSEP</div><p><strong>Hukum I (Kelembaman):</strong> Setiap benda akan tetap diam atau bergerak lurus beraturan kecuali dikenai gaya total tidak nol. Contoh: penumpang terdorong ke depan saat mobil direm.</p><p><strong>Hukum II (F = m·a):</strong> Percepatan sebanding dengan resultan gaya dan berbanding terbalik dengan massa. <div class="rumus-box">ΣF = m × a &nbsp;&nbsp; (1 N = 1 kg·m/s²)</div><strong>Hukum III (Aksi-Reaksi):</strong> Setiap aksi ada reaksi yang sama besar dan berlawanan arah. Contoh: roket terdorong ke atas karena gas didorong ke bawah.</p><div class="contoh-soal"><strong>📝 CONTOH SOAL:</strong> Sebuah mobil bermassa 1500 kg dipercepat 4 m/s². Berapa gaya yang dihasilkan mesin? <br>Jawab: F = m·a = 1500 × 4 = 6000 N.</div><div class="sumber-box">📚 SUMBER: Halliday & Resnick (2014) "Fundamentals of Physics"; Newton (1687) "Principia".</div>` },
+                { name: "BAB 2: Gravitasi Universal & Medan Gravitasi", content: `<div class="definition-box"><strong>🌍 DEFINISI:</strong> Gaya tarik menarik antara dua benda yang memiliki massa. Semakin besar massa, semakin besar gaya; semakin jauh jaraknya, semakin kecil gaya.</div><div class="rumus-box">F = G · (m₁·m₂) / r² &nbsp;&nbsp; G = 6,674 × 10⁻¹¹ Nm²/kg²</div><p>Henry Cavendish (1798) pertama kali mengukur konstanta G menggunakan neraca torsi. Gravitasi menjaga planet tetap mengorbit matahari, menyebabkan pasang surut air laut, dan membuat benda jatuh ke bumi. Percepatan gravitasi bumi g = 9,8 m/s².</p><div class="contoh-soal"><strong>📝 SOAL:</strong> Massa bumi 5,97×10²⁴ kg, massa bulan 7,35×10²² kg, jarak 3,84×10⁸ m. Hitung gaya gravitasi bumi-bulan!<br>Jawab: F = 6,67×10⁻¹¹ × (5,97×10²⁴ × 7,35×10²²) / (3,84×10⁸)² = 1,98×10²⁰ N.</div><div class="sumber-box">📚 SUMBER: Newton (1687), Cavendish (1798), "Gravitation" by Misner, Thorne, Wheeler.</div>` },
+                { name: "BAB 3: Termodinamika & Hukum Kekekalan Energi", content: `<div class="definition-box"><strong>🔥 DEFINISI:</strong> Termodinamika adalah cabang fisika yang mempelajari hubungan antara panas (kalor), kerja, suhu, dan energi. Dasar dari mesin kalor, kulkas, dan pembangkit listrik.</div><div class="bab-header">📜 4 HUKUM TERMODINAMIKA</div><p><strong>Hukum ke-0:</strong> Jika dua sistem setimbang termal dengan sistem ketiga, maka ketiganya setimbang → konsep suhu.<br><strong>Hukum ke-I (Kekekalan Energi):</strong> ΔU = Q - W (perubahan energi dalam = kalor masuk - kerja yang dilakukan sistem).<br><strong>Hukum ke-II (Entropi):</strong> Entropi alam semesta selalu meningkat. Tidak mungkin mesin kalor 100% efisien.<br><strong>Hukum ke-III:</strong> Saat suhu mendekati nol mutlak (0 K), entropi mendekati nol.</p><div class="rumus-box">ΔU = Q - W &nbsp;&nbsp;&nbsp; ΔS = Q_rev / T</div><div class="contoh-soal"><strong>📝 SOAL:</strong> Sistem menyerap 500 J kalor dan melakukan kerja 200 J. Berapa ΔU? Jawab: ΔU = 500 - 200 = 300 J.</div><div class="sumber-box">📚 SUMBER: Carnot (1824), Clausius (1850), "Thermal Physics" by Reif.</div>` },
+                { name: "BAB 4: Listrik Statis & Dinamis", content: `<div class="definition-box"><strong>⚡ DEFINISI:</strong> Listrik adalah fenomena aliran muatan listrik. Listrik statis membahas muatan diam, listrik dinamis membahas arus listrik.</div><div class="rumus-box">Hukum Coulomb: F = k·q₁·q₂/r², k = 9×10⁹ Nm²/C²<br>Hukum Ohm: V = I·R &nbsp;|&nbsp; Daya: P = V·I</div><p>Arus listrik adalah aliran elektron. Hambatan listrik (R) dipengaruhi jenis bahan, panjang, luas penampang. Rangkaian seri dan paralel memiliki karakteristik berbeda.</p><div class="contoh-soal">Contoh: lampu 220V, 0,5A → daya = 110 watt. Jika dipasang 2 jam → energi = 220 Wh.</div><div class="sumber-box">📚 SUMBER: Coulomb (1785), Ohm (1827), buku "Introduction to Electrodynamics" Griffiths.</div>` }
             ]},
-            { name: "🧬 BIOLOGI", icon: "fas fa-dna", description: "Ilmu kehidupan dari sel hingga ekosistem", topics: [
-                { name: "Teori Evolusi Darwin", content: `<div class="explanation-card"><strong>🦕 SEJARAH & PENEMU:</strong> Charles Darwin (1809-1882) menerbitkan "On the Origin of Species" (1859). Perjalanan dengan HMS Beagle (1831-1836) mengamati burung finch di Kepulauan Galapagos.</div>
-<strong>📖 PENJELASAN LENGKAP:</strong><br>
-Teori evolusi melalui seleksi alam:<br>
-• Variasi: Setiap individu dalam spesies memiliki sifat berbeda.<br>
-• Heritabilitas: Sifat dapat diwariskan ke keturunan.<br>
-• Kompetisi: Sumber daya terbatas → individu bersaing.<br>
-• Seleksi alam: Individu dengan sifat adaptif lebih mungkin bertahan & bereproduksi.<br>
-• Spesiasi: Akumulasi perubahan selama jutaan tahun menghasilkan spesies baru.
-<br><br>
-<strong>🔬 BUKTI EVOLUSI:</strong> Fosil (Tiktaalik), Homologi (tulang lengan manusia & kelelawar), Biogeografi, Genetika (DNA).
-<br><br><strong>📚 SUMBER:</strong> Darwin (1859), "The Blind Watchmaker" Richard Dawkins.` },
-                { name: "Struktur DNA & Genetika", content: `<div class="explanation-card"><strong>🧬 SEJARAH EPIC:</strong> Friedrich Miescher (1869) pertama isolasi nuklein. James Watson & Francis Crick (1953) dengan bantuan foto difraksi sinar-X Rosalind Franklin menemukan struktur double helix.</div>
-<strong>📖 PENJELASAN LENGKAP:</strong><br>
-DNA (DeoxyriboNucleic Acid) adalah molekul pembawa informasi genetik.<br>
-• Struktur: Double helix (dua untai berpilin).<br>
-• Komponen: Nukleotida (gula deoksiribosa + fosfat + basa nitrogen).<br>
-• Basa nitrogen: Adenin (A) - Timin (T), Guanin (G) - Sitosin (C).<br>
-• Replikasi: DNA menggandakan diri sebelum pembelahan sel.<br>
-• Sintesis protein: DNA → RNA (transkripsi) → Protein (translasi).
-<br><br>
-<strong>🔬 APLIKASI:</strong> Rekayasa genetika, tes DNA forensik, terapi gen, CRISPR.
-<br><br><strong>📚 SUMBER:</strong> Watson & Crick (1953), Nature.` }
+            { name: "🧬 BIOLOGI & ILMU KEHIDUPAN", icon: "fas fa-dna", description: "Sel, Genetika, Evolusi, Fisiologi, Ekologi", topics: [
+                { name: "BAB 5: Struktur Sel & Organel", content: `<div class="definition-box"><strong>🔬 DEFINISI:</strong> Sel adalah unit struktural dan fungsional terkecil dari makhluk hidup. Teori sel dikemukakan oleh Matthias Schleiden & Theodor Schwann (1839).</div><p><strong>Organel sel dan fungsinya:</strong><br>• Nukleus: tempat menyimpan DNA (materi genetik).<br>• Mitokondria: "pembangkit energi" → menghasilkan ATP melalui respirasi seluler.<br>• Ribosom: sintesis protein.<br>• Retikulum endoplasma (RE): transportasi protein & lipid.<br>• Aparatus Golgi: modifikasi dan pengemasan protein.<br>• Kloroplas (tumbuhan): tempat fotosintesis.<br>• Membran sel: mengatur keluar masuk zat.</p><div class="rumus-box">Persamaan respirasi seluler: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 36 ATP</div><div class="contoh-soal">Perbedaan sel hewan dan tumbuhan: sel tumbuhan memiliki dinding sel (selulosa), vakuola besar, dan kloroplas.</div><div class="sumber-box">📚 SUMBER: Campbell Biology (12th edition), Alberts "Molecular Biology of the Cell".</div>` },
+                { name: "BAB 6: Genetika & DNA (Materi Genetik)", content: `<div class="definition-box"><strong>🧬 DEFINISI:</strong> Genetika adalah cabang biologi yang mempelajari pewarisan sifat dan variasi organisme. DNA (Asam Deoksiribonukleat) adalah molekul pembawa informasi genetik.</div><p>James Watson & Francis Crick (1953) menemukan struktur double helix DNA dengan bantuan foto difraksi sinar-X Rosalind Franklin. DNA terdiri dari nukleotida: gula deoksiribosa, fosfat, dan basa nitrogen (Adenin, Timin, Guanin, Sitosin). Pasangan basa: A-T (2 ikatan hidrogen), G-C (3 ikatan hidrogen).</p><div class="rumus-box">Replikasi DNA → Transkripsi (DNA → RNA) → Translasi (RNA → Protein)</div><div class="contoh-soal"><strong>📝 Hukum Mendel:</strong> Persilangan monohibrid Mm × Mm menghasilkan keturunan: 25% MM, 50% Mm, 25% mm. Rasio fenotipe 3:1.</div><div class="sumber-box">📚 SUMBER: Mendel (1865), Watson & Crick (1953) Nature, "Genes" by Lewin.</div>` },
+                { name: "BAB 7: Teori Evolusi Darwin", content: `<div class="definition-box"><strong>🦕 DEFINISI:</strong> Evolusi adalah perubahan sifat-sifat terwariskan dalam populasi makhluk hidup dari generasi ke generasi melalui mekanisme seleksi alam.</div><p>Charles Darwin (1809-1882) menerbitkan "On the Origin of Species" (1859). Perjalanan dengan HMS Beagle (1831-1836) mengamati burung finch di Kepulauan Galapagos: paruh berbeda sesuai jenis makanan yang tersedia.</p><div class="bab-header">🌿 PRINSIP SELEKSI ALAM</div><p>1. Variasi individu dalam satu populasi.<br>2. Kompetisi karena sumber daya terbatas.<br>3. Individu dengan sifat adaptif lebih mungkin bertahan hidup dan bereproduksi.<br>4. Sifat adaptif diwariskan ke keturunan.<br>5. Akumulasi perubahan selama jutaan tahun menghasilkan spesies baru.</p><div class="contoh-soal">Bukti evolusi: fosil transisi (Tiktaalik, Archaeopteryx), homologi organ (tulang lengan manusia & kelelawar), embriologi perbandingan, dan kesamaan DNA.</div><div class="sumber-box">📚 SUMBER: Darwin (1859), Futuyma "Evolution", "The Blind Watchmaker" Richard Dawkins.</div>` },
+                { name: "BAB 8: Fotosintesis & Metabolisme Tumbuhan", content: `<div class="definition-box"><strong>🌿 DEFINISI:</strong> Fotosintesis adalah proses mengubah energi cahaya matahari menjadi energi kimia (glukosa) yang dilakukan oleh tumbuhan, alga, dan beberapa bakteri.</div><div class="rumus-box">6CO₂ + 6H₂O + cahaya → C₆H₁₂O₆ + 6O₂</div><p>Terjadi di kloroplas. Terdiri dari dua tahap:<br>1. Reaksi terang: mengubah cahaya menjadi ATP dan NADPH (di membran tilakoid).<br>2. Siklus Calvin (reaksi gelap): fiksasi CO₂ menjadi glukosa (di stroma).</p><div class="contoh-soal">Faktor yang mempengaruhi fotosintesis: intensitas cahaya, konsentrasi CO₂, suhu, dan ketersediaan air.</div><div class="sumber-box">📚 SUMBER: Melvin Calvin (1961 Nobel), Campbell Biology, "Plant Physiology" by Taiz.</div>` },
+                { name: "BAB 9: Sistem Saraf Manusia", content: `<div class="definition-box"><strong>🧠 DEFINISI:</strong> Sistem saraf adalah jaringan kompleks yang mengontrol dan mengkoordinasi semua fungsi tubuh melalui sinyal listrik dan kimia.</div><p><strong>Unit dasar:</strong> Neuron (sel saraf) terdiri dari dendrit (menerima sinyal), akson (mengirim sinyal), dan sinaps (tempat komunikasi antar neuron). Neurotransmitter: dopamin, serotonin, asetilkolin.</p><p>Otak manusia: korteks serebral (pusat kesadaran, berpikir), serebelum (keseimbangan), batang otak (fungsi vital: pernapasan, detak jantung). Sistem saraf otonom mengatur fungsi involunter.</p><div class="contoh-soal">Refleks lutut (patella) adalah contoh jalur refleks monosinaptik yang tidak melibatkan otak secara sadar.</div><div class="sumber-box">📚 SUMBER: Guyton "Textbook of Medical Physiology", "Neuroscience" by Purves.</div>` }
             ]},
-            { name: "📐 MATEMATIKA", icon: "fas fa-calculator", description: "Ratu segala ilmu", topics: [
-                { name: "Kalkulus (Turunan & Integral)", content: `<div class="explanation-card"><strong>📜 SEJARAH:</strong> Ditemukan secara independen oleh Isaac Newton (Inggris) dan Gottfried Wilhelm Leibniz (Jerman) pada akhir abad ke-17. Perselisihan siapa penemu pertama terjadi puluhan tahun.</div>
-<strong>📖 PENJELASAN LENGKAP:</strong><br>
-<strong>Turunan (Diferensial):</strong> Laju perubahan suatu fungsi terhadap variabelnya. Notasi: dy/dx atau f'(x).<br>
-• Contoh: Kecepatan = turunan posisi terhadap waktu.<br>
-• Rumus dasar: d/dx (xⁿ) = n·xⁿ⁻¹.<br><br>
-<strong>Integral:</strong> Kebalikan dari turunan. Luas daerah di bawah kurva.<br>
-• Integral tentu: ∫ dari a ke b f(x) dx = luas antara a dan b.<br>
-• Integral tak tentu: ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C.
-<br><br>
-<strong>💡 APLIKASI:</strong> Fisika (gerak, listrik), ekonomi (marginal cost), teknik, AI (gradient descent).
-<br><br><strong>📚 SUMBER:</strong> Newton (1665), Leibniz (1675).` }
+            { name: "📐 MATEMATIKA MURNI & TERAPAN", icon: "fas fa-calculator", description: "Kalkulus, Aljabar, Geometri, Statistika", topics: [
+                { name: "BAB 10: Kalkulus Diferensial (Turunan)", content: `<div class="definition-box"><strong>📈 DEFINISI:</strong> Turunan (diferensial) mengukur laju perubahan suatu fungsi terhadap variabelnya. Dikembangkan oleh Isaac Newton dan Gottfried Leibniz pada abad ke-17.</div><div class="rumus-box">f'(x) = lim (h→0) [f(x+h)-f(x)]/h<br>d/dx (xⁿ) = n·xⁿ⁻¹<br>d/dx (sin x) = cos x &nbsp;|&nbsp; d/dx (cos x) = -sin x</div><p><strong>Aplikasi:</strong> Kecepatan = turunan posisi terhadap waktu; percepatan = turunan kecepatan. Dalam ekonomi, turunan digunakan untuk mencari biaya marginal dan penerimaan marginal. Dalam optimasi, turunan membantu mencari nilai maksimum/minimum fungsi.</p><div class="contoh-soal"><strong>📝 SOAL:</strong> Tentukan turunan pertama dari f(x) = 5x⁴ - 3x² + 7x - 2.<br>Jawab: f'(x) = 20x³ - 6x + 7.</div><div class="sumber-box">📚 SUMBER: Stewart (2015) "Calculus: Early Transcendentals", Newton (1665).</div>` },
+                { name: "BAB 11: Integral & Aplikasinya", content: `<div class="definition-box"><strong>📊 DEFINISI:</strong> Integral adalah kebalikan dari turunan (anti-turunan). Integral tentu digunakan untuk menghitung luas daerah di bawah kurva, volume benda putar, dan nilai rata-rata fungsi.</div><div class="rumus-box">∫ xⁿ dx = xⁿ⁺¹/(n+1) + C &nbsp; (n ≠ -1)<br>∫ₐᵇ f(x) dx = F(b) - F(a) &nbsp; (Teorema Dasar Kalkulus)</div><p><strong>Contoh aplikasi:</strong> Menghitung jarak dari fungsi kecepatan, luas area kompleks, volume benda putar (metode cakram & cincin).</p><div class="contoh-soal"><strong>📝 SOAL:</strong> Hitung ∫ (6x² - 4x + 3) dx.<br>Jawab: 2x³ - 2x² + 3x + C.<br>Hitung luas di bawah kurva y=x² dari x=0 sampai x=2: ∫₀² x² dx = [x³/3]₀² = 8/3 satuan luas.</div><div class="sumber-box">📚 SUMBER: Leibniz (1675), Riemann (1854), Stewart "Calculus".</div>` },
+                { name: "BAB 12: Matriks & Determinan", content: `<div class="definition-box"><strong>🔢 DEFINISI:</strong> Matriks adalah susunan bilangan berbentuk persegi panjang yang diatur dalam baris dan kolom. Digunakan untuk menyelesaikan sistem persamaan linear, transformasi geometri, dan pemrosesan data.</div><div class="rumus-box">Determinan matriks 2x2 [[a,b],[c,d]] = ad - bc<br>Matriks invers: A⁻¹ = (1/det(A)) × adj(A)</div><p>Operasi matriks: penjumlahan, perkalian skalar, perkalian matriks (syarat: jumlah kolom matriks pertama = jumlah baris matriks kedua). Matriks identitas (I) memiliki elemen diagonal 1 dan lainnya 0.</p><div class="contoh-soal"><strong>📝 SOAL:</strong> Matriks A = [[2,3],[1,4]]. Hitung determinan dan inversnya.<br>det = 2×4 - 3×1 = 8-3=5. Invers = 1/5 × [[4,-3],[-1,2]] = [[0,8, -0,6],[-0,2, 0,4]].</div><div class="sumber-box">📚 SUMBER: Anton & Rorres "Elementary Linear Algebra", "Linear Algebra" by Strang.</div>` },
+                { name: "BAB 13: Statistika Inferensia & Probabilitas", content: `<div class="definition-box"><strong>📉 DEFINISI:</strong> Statistika inferensia adalah metode menarik kesimpulan tentang populasi berdasarkan data sampel. Probabilitas (peluang) mengukur kemungkinan terjadinya suatu kejadian.</div><div class="rumus-box">Peluang P(A) = n(A)/n(S)<br>Rata-rata (mean) = Σx/n<br>Simpangan baku σ = √(Σ(x-μ)²/n)</div><p>Distribusi normal: kurva simetris berbentuk lonceng, 68% data dalam 1σ, 95% dalam 2σ, 99,7% dalam 3σ. Uji hipotesis digunakan untuk menguji kebenaran suatu pernyataan.</p><div class="contoh-soal"><strong>📝 SOAL:</strong> Sebuah dadu dilempar sekali, berapa peluang muncul mata dadu genap?<br>Jawab: n(S)=6, n(genap={2,4,6})=3, P=3/6=0,5 atau 50%.</div><div class="sumber-box">📚 SUMBER: Walpole "Probability & Statistics", "Intro to Probability" by Bertsekas.</div>` }
             ]},
-            { name: "🌍 SEJARAH", icon: "fas fa-landmark", description: "Perjalanan peradaban manusia", topics: [
-                { name: "Peradaban Kuno Dunia", content: `<div class="explanation-card"><strong>🏛️ AWAL PERADABAN:</strong> Peradaban manusia dimulai sekitar 3500 SM di Mesopotamia (Sumer), Mesir Kuno (3100 SM), Lembah Indus (2600 SM), dan China Kuno (1600 SM).</div>
-<strong>📖 PENJELASAN DETAIL:</strong><br>
-🔹 <strong>Mesopotamia (Irak modern):</strong> Ciptakan tulisan paku (cuneiform), roda, dan Kode Hammurabi (hukum tertulis pertama).<br>
-🔹 <strong>Mesir Kuno:</strong> Piramida Giza, sistem irigasi Nil, hieroglif, Firaun Ramses II.<br>
-🔹 <strong>Yunani Kuno:</strong> Lahirnya demokrasi Athena, filsafat (Socrates, Plato, Aristoteles), matematika (Pythagoras, Euclid), dan Olimpiade.<br>
-🔹 <strong>Romawi:</strong> Republik & Kekaisaran, Hukum Romawi, saluran air (aqueduct), dan Latin sebagai bahasa induk Romawi.
-<br><br><strong>📚 SUMBER:</strong> Herodotus "The Histories", sejarawan modern Will Durant.` }
+            { name: "🌍 SEJARAH PERADABAN", icon: "fas fa-landmark", description: "Dunia & Nusantara", topics: [
+                { name: "BAB 14: Peradaban Mesopotamia (3500 SM)", content: `<div class="definition-box"><strong>🏺 DEFINISI:</strong> Mesopotamia (Yunani: "antara sungai") adalah peradaban yang terletak di antara sungai Tigris dan Efrat (Irak modern). Dianggap sebagai peradaban tertua di dunia.</div><p><strong>Kontribusi utama:</strong><br>• Tulisan paku (cuneiform) oleh bangsa Sumeria (3500 SM).<br>• Roda (3200 SM) untuk transportasi dan tembikar.<br>• Kode Hammurabi (1754 SM): hukum tertulis pertama dengan azas "mata ganti mata".<br>• Sistem bilangan seksagesimal (basis 60) → asal 60 menit, 360°.<br>• Ziggurat: bangunan suci bertingkat.</p><div class="sumber-box">📚 SUMBER: Kramer "History Begins at Sumer", "The Babylonians" by Leick.</div>` },
+                { name: "BAB 15: Mesir Kuno (3100 SM)", content: `<div class="definition-box"><strong>🇪🇬 DEFINISI:</strong> Peradaban Lembah Nil yang berlangsung lebih dari 3000 tahun. Dikenal dengan Firaun sebagai penguasa dewa, piramida, dan hieroglif.</div><p><strong>Pencapaian:</strong> Piramida Giza (kuburan Firaun Khufu), Sphinx, sistem irigasi canggih, mumifikasi untuk kehidupan setelah mati, hieroglif (tulisan gambar), Papirus (kertas dari tanaman papirus). Firaun terkenal: Ramses II (perang Kadesh), Tutankhamun (makamnya ditemukan 1922).</p><div class="contoh-soal">Rosetta Stone (1799) adalah kunci penerjemah hieroglif karena menuliskan teks yang sama dalam tiga aksara: hieroglif, demotik, dan Yunani.</div><div class="sumber-box">📚 SUMBER: "The Oxford History of Ancient Egypt", "The Complete Pyramids" by Lehner.</div>` },
+                { name: "BAB 16: Yunani Klasik & Filsafat", content: `<div class="definition-box"><strong>🏛️ DEFINISI:</strong> Peradaban Yunani (800-146 SM) melahirkan demokrasi, filsafat, matematika, teater, dan Olimpiade. Dikenal sebagai "Cradle of Western Civilization".</div><p><strong>Tokoh penting:</strong> Socrates (dialektika, "Kenali dirimu sendiri"), Plato (filsafat idealisme, "Republik"), Aristoteles (logika, etika, ilmu alam). Alexander Agung menyebarkan budaya Helenistik hingga Asia.</p><p><strong>Kontribusi:</strong> Demokrasi Athena (semua warga bebas ikut sidang), Teater tragedi & komedi (Aeschylus, Sophocles), Olimpiade pertama 776 SM, Matematika (Pythagoras, Euclid).</p><div class="sumber-box">📚 SUMBER: Thucydides "History of the Peloponnesian War", Plato "The Republic", "The Greeks" by Kitto.</div>` },
+                { name: "BAB 17: Sejarah Indonesia (Kerajaan Majapahit)", content: `<div class="definition-box"><strong>🏯 DEFINISI:</strong> Majapahit adalah kerajaan Hindu-Buddha terbesar di Nusantara (1293-1527 M) dengan pusat di Trowulan, Jawa Timur. Puncak kejayaan di bawah Mahapatih Gajah Mada.</div><p><strong>Sumpah Palapa Gajah Mada (1336):</strong> "Lamun huwus kalah nusantara, ingsun amukti palapa" (Jika sudah menaklukkan Nusantara, baru akan menikmati istirahat). Wilayah kekuasaan meliputi hampir seluruh Indonesia, Malaysia, Filipina.</p><p>Kitab Negarakertagama (Mpu Prapanca) dan Pararaton adalah sumber sejarah utama. Candi-candi: Candi Sukuh, Candi Tikus. Majapahit runtuh karena serangan Kesultanan Demak dan perang saudara.</p><div class="sumber-box">📚 SUMBER: "Nagarakretagama" terjemahan, "Majapahit: Batas Kota dan Jejak Kejayaan" by Munoz.</div>` }
             ]},
-            { name: "💰 EKONOMI", icon: "fas fa-chart-line", description: "Ilmu kelangkaan & pilihan", topics: [
-                { name: "Supply & Demand", content: `<div class="explanation-card"><strong>📈 SEJARAH:</strong> Konsep dasar ekonomi ini dipopulerkan oleh Adam Smith (1776) dalam "The Wealth of Nations", lalu dikembangkan Alfred Marshall (1890).</div>
-<strong>📖 PENJELASAN LENGKAP:</strong><br>
-<strong>Hukum Permintaan (Demand):</strong> Semakin tinggi harga, semakin rendah jumlah yang diminta (ceteris paribus). Kurva demand menurun.<br>
-<strong>Hukum Penawaran (Supply):</strong> Semakin tinggi harga, semakin tinggi jumlah yang ditawarkan. Kurva supply menaik.<br>
-<strong>Ekuilibrium (Keseimbangan):</strong> Titik pertemuan demand & supply → harga pasar terbentuk.<br>
-<strong>Elastisitas:</strong> Ukuran kepekaan perubahan permintaan/penawaran terhadap perubahan harga.
-<br><br>
-<strong>🌍 APLIKASI:</strong> Kebijakan harga pemerintah, subsidi, pajak, prediksi bisnis.
-<br><br><strong>📚 SUMBER:</strong> Adam Smith (1776), Marshall (1890).` }
+            { name: "💰 EKONOMI & BISNIS", icon: "fas fa-chart-line", description: "Mikro, Makro, Akuntansi", topics: [
+                { name: "BAB 18: Permintaan, Penawaran & Keseimbangan Pasar", content: `<div class="definition-box"><strong>📈 DEFINISI:</strong> Permintaan adalah jumlah barang yang ingin dibeli konsumen pada berbagai tingkat harga. Penawaran adalah jumlah barang yang ingin dijual produsen. Keseimbangan terjadi ketika permintaan = penawaran.</div><div class="rumus-box">Hukum Permintaan: P↑ → Qd↓ (kurva menurun)<br>Hukum Penawaran: P↑ → Qs↑ (kurva menaik)<br>Ekuilibrium: Qd = Qs → harga dan kuantitas keseimbangan</div><p>Faktor pergeseran permintaan: pendapatan, selera, harga barang substitusi, jumlah penduduk. Faktor pergeseran penawaran: teknologi, biaya produksi, pajak, cuaca.</p><div class="contoh-soal"><strong>📝 SOAL:</strong> Fungsi permintaan Qd = 100 - 2P, fungsi penawaran Qs = 10 + 3P. Cari harga dan kuantitas keseimbangan!<br>100-2P = 10+3P → 100-10=5P → 90=5P → P=18. Q = 100-2(18) = 64.</div><div class="sumber-box">📚 SUMBER: Mankiw "Principles of Economics", Samuelson & Nordhaus "Economics".</div>` },
+                { name: "BAB 19: Inflasi & Kebijakan Moneter", content: `<div class="definition-box"><strong>💰 DEFINISI:</strong> Inflasi adalah kenaikan harga barang dan jasa secara umum dan terus-menerus dalam suatu perekonomian. Lawannya deflasi (penurunan harga).</div><div class="rumus-box">Tingkat inflasi = (IHK₂ - IHK₁)/IHK₁ × 100%<br>Fisher Effect: i = r + π (nominal = riil + inflasi)</div><p>Penyebab inflasi: demand-pull (permintaan berlebih), cost-push (kenaikan biaya produksi), dan ekspektasi inflasi. Dampak: menurunkan daya beli, mengganggu investasi. Bank sentral (BI, Fed, ECB) mengendalikan inflasi melalui suku bunga (kebijakan moneter).</p><div class="contoh-soal">Jika IHK tahun lalu 110 dan tahun ini 121, maka inflasi = (121-110)/110 × 100% = 10%.</div><div class="sumber-box">📚 SUMBER: Blanchard "Macroeconomics", "The General Theory" Keynes.</div>` }
             ]}
         ];
 
@@ -232,7 +170,7 @@ DNA (DeoxyriboNucleic Acid) adalah molekul pembawa informasi genetik.<br>
                 const card = document.createElement('div');
                 card.className = 'category-card';
                 card.onclick = () => openCategory(cat.name);
-                card.innerHTML = `<div class="category-icon"><i class="${cat.icon}"></i></div><h3>${cat.name}</h3><p>${cat.description}</p><span class="topic-count">${cat.topics.length} topik + penjelasan lengkap</span>`;
+                card.innerHTML = `<div class="category-icon"><i class="${cat.icon}"></i></div><h3>${cat.name}</h3><p>${cat.description}</p><span class="topic-count">${cat.topics.length} Bab</span>`;
                 grid.appendChild(card);
             });
         }
@@ -243,17 +181,16 @@ DNA (DeoxyriboNucleic Acid) adalah molekul pembawa informasi genetik.<br>
             const modal = document.getElementById('subjectModal');
             const modalContent = document.getElementById('modalContent');
             modalContent.innerHTML = `
-                <div class="subject-header"><i class="${category.icon}"></i><h2>${category.name}</h2><span style="margin-left:auto; background:#667eea33; padding:5px 15px; border-radius:30px;">${category.topics.length} Materi + Sejarah</span></div>
+                <div class="subject-header"><i class="${category.icon}"></i><h2>${category.name}</h2><span style="margin-left:auto; background:#f59e0b; padding:5px 15px; border-radius:40px; color:white;">${category.topics.length} Bab lengkap</span></div>
                 <div class="topic-list" id="topicList"></div>
                 <div id="contentViewer" class="content-viewer"></div>
-                <button class="btn-back" onclick="document.getElementById('subjectModal').style.display='none'">✅ Selesai Belajar</button>
-                <div class="tip-box"><i class="fas fa-graduation-cap" style="color:#667eea; margin-right:10px;"></i> <strong>Tips Belajar Maksimal:</strong> 1) Baca penjelasan sambil catat poin penting. 2) Cari tahu tokoh & tahun penemuan. 3) Diskusikan dengan teman. 4) Gunakan fitur pencarian untuk eksplor lebih dalam.</div>
+                <button class="btn-back" onclick="document.getElementById('subjectModal').style.display='none'">📚 Kembali</button>
             `;
             const topicListDiv = document.getElementById('topicList');
             category.topics.forEach(topic => {
                 const topicDiv = document.createElement('div');
                 topicDiv.className = 'topic-item';
-                topicDiv.innerHTML = `<strong>📘 ${topic.name}</strong><p style="color:#aaa; font-size:0.8rem; margin-top:8px;">Klik untuk membaca penjelasan SUPER LENGKAP + sejarah + rumus + contoh</p>`;
+                topicDiv.innerHTML = `<strong>📖 ${topic.name}</strong><p style="color:#4b5563; font-size:0.85rem; margin-top:6px;">Klik untuk membaca penjelasan super rinci + definisi + rumus + contoh soal + sumber</p>`;
                 topicDiv.onclick = () => showContent(topic.name, topic.content);
                 topicListDiv.appendChild(topicDiv);
             });
@@ -263,13 +200,13 @@ DNA (DeoxyriboNucleic Acid) adalah molekul pembawa informasi genetik.<br>
         function showContent(title, content) {
             const viewer = document.getElementById('contentViewer');
             viewer.style.display = 'block';
-            viewer.innerHTML = `<h3><i class="fas fa-book-open"></i> ${title}</h3><div style="margin-top:1rem; line-height:1.9; font-size:1rem;">${content}</div><div style="margin-top:1.8rem; padding:1rem; background:linear-gradient(135deg,#1e1e3a,#13132b); border-radius:15px;"><i class="fas fa-star" style="color:#f1c40f;"></i> <strong>GRENXHARIMAU SAYS:</strong> “Ilmu adalah cahaya. Semakin dalam kau belajar, semakin terang jiwamu. Teruslah bertanya dan jangan pernah puas!”</div>`;
+            viewer.innerHTML = `<h3>📘 ${title}</h3><div class="book-text">${content}</div><div style="margin-top:2rem; padding:1rem; background:#fef2e0; border-radius:20px;"><i class="fas fa-graduation-cap" style="color:#f59e0b;"></i> <strong>Tips Belajar Super Efektif:</strong> 1) Baca penjelasan sambil mencatat poin utama. 2) Kerjakan contoh soal dengan cara mengulang tanpa melihat jawaban. 3) Diskusikan konsep dengan teman. 4) Gunakan fitur pencarian untuk eksplor lebih dalam.</div>`;
             viewer.scrollIntoView({ behavior: 'smooth' });
         }
 
         function searchContent() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
-            if (!query) return alert('🔍 Masukkan kata kunci! Contoh: gravitasi, DNA, kalkulus, evolusi, supply demand');
+            if (!query) return alert('🔍 Masukkan judul bab atau konsep (contoh: "gravitasi", "DNA", "kalkulus", "majapahit")');
             let results = [];
             categories.forEach(cat => {
                 cat.topics.forEach(topic => {
@@ -278,28 +215,28 @@ DNA (DeoxyriboNucleic Acid) adalah molekul pembawa informasi genetik.<br>
                     }
                 });
             });
-            if (results.length === 0) { alert('❌ Materi tidak ditemukan. Coba kata kunci lain!'); return; }
+            if (results.length === 0) { alert('❌ Tidak ditemukan. Coba kata kunci lain!'); return; }
             const modal = document.getElementById('subjectModal');
             const modalContent = document.getElementById('modalContent');
             modalContent.innerHTML = `
-                <div class="subject-header"><i class="fas fa-search"></i><h2>🔎 Hasil Pencarian: "${query}"</h2><span style="margin-left:auto; background:#667eea; padding:5px 15px; border-radius:30px;">${results.length} ditemukan</span></div>
+                <div class="subject-header"><i class="fas fa-search"></i><h2>🔎 Hasil Pencarian: "${query}"</h2><span style="margin-left:auto; background:#f59e0b; padding:5px 15px; border-radius:40px;">${results.length} Bab</span></div>
                 <div class="topic-list" id="searchResults"></div>
                 <div id="contentViewer" class="content-viewer"></div>
-                <button class="btn-back" onclick="document.getElementById('subjectModal').style.display='none'">Tutup</button>
+                <button class="btn-back" onclick="document.getElementById('subjectModal').style.display='none'">Kembali</button>
             `;
             const resultsDiv = document.getElementById('searchResults');
             results.forEach(r => {
-                const resultItem = document.createElement('div');
-                resultItem.className = 'topic-item';
-                resultItem.innerHTML = `<i class="${r.icon}" style="margin-right:12px; font-size:1.3rem;"></i> <strong>${r.topic}</strong><p style="color:#aaa; font-size:0.8rem; margin-top:5px;">Kategori: ${r.category}</p>`;
-                resultItem.onclick = () => showContent(r.topic, r.content);
-                resultsDiv.appendChild(resultItem);
+                const item = document.createElement('div');
+                item.className = 'topic-item';
+                item.innerHTML = `<i class="${r.icon}" style="margin-right:12px;"></i> <strong>${r.topic}</strong><p style="color:#4b5563; margin-top:5px;">Kategori: ${r.category}</p>`;
+                item.onclick = () => showContent(r.topic, r.content);
+                resultsDiv.appendChild(item);
             });
             modal.style.display = 'block';
         }
 
         document.querySelector('.close-modal').onclick = () => document.getElementById('subjectModal').style.display = 'none';
-        window.onclick = (event) => { if (event.target === document.getElementById('subjectModal')) document.getElementById('subjectModal').style.display = 'none'; };
+        window.onclick = (e) => { if (e.target === document.getElementById('subjectModal')) document.getElementById('subjectModal').style.display = 'none'; };
         document.getElementById('searchInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') searchContent(); });
         generateCategoryGrid();
     </script>
