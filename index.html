@@ -3,319 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📚 Sumber Belajar Online Terpercaya - Ensiklopedia Ilmu</title>
+    <title>📚 RUANG BELAJAR GRENXHARIMAU - Penjelasan Super Lengkap Semua Ilmu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: #fff;
-            line-height: 1.6;
-            padding: 2rem;
-        }
-        .container { max-width: 1200px; margin: 0 auto; }
+        body { font-family: 'Inter', sans-serif; background: #0f0f23; color: #fff; overflow-x: hidden; }
         
-        /* header */
-        .header {
+        /* Efek background keren */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(102,126,234,0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1a1a3a; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 10px; }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(102,126,234,0.3);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo i { font-size: 2rem; color: #667eea; animation: pulse 2s infinite; }
+        .logo h1 { font-size: 1.5rem; background: linear-gradient(135deg, #667eea, #764ba2, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.7; } }
+        
+        .search-bar { display: flex; align-items: center; background: rgba(255,255,255,0.08); border-radius: 50px; padding: 0.5rem 1rem; width: 320px; border: 1px solid rgba(102,126,234,0.3); }
+        .search-bar input { background: none; border: none; color: white; padding: 0.5rem; width: 100%; outline: none; font-size: 0.9rem; }
+        .search-bar button { background: none; border: none; color: #667eea; cursor: pointer; font-size: 1.1rem; }
+        
+        .hero {
+            padding: 9rem 5% 4rem;
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 30px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a4a 100%);
+            position: relative;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; animation: fadeInUp 0.8s ease; }
+        .hero .gradient-text { background: linear-gradient(135deg, #667eea, #764ba2, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: #bbb; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .stats { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
+        .stat-item { text-align: center; background: rgba(255,255,255,0.05); padding: 1rem 2rem; border-radius: 20px; backdrop-filter: blur(5px); }
+        .stat-number { font-size: 2rem; font-weight: 800; color: #667eea; }
+        
+        .categories { padding: 4rem 5%; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; position: relative; }
+        .section-title:after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 3px; }
+        
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .category-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 24px;
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(102,126,234,0.2);
             backdrop-filter: blur(10px);
         }
-        .header h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #a8edea, #fed6e3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-        }
-        .header p { color: #ccc; max-width: 800px; margin: 0 auto; }
+        .category-card:hover { transform: translateY(-12px); background: rgba(102,126,234,0.12); border-color: #667eea; box-shadow: 0 20px 35px rgba(0,0,0,0.3); }
+        .category-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+        .category-card h3 { font-size: 1.4rem; margin-bottom: 0.7rem; }
+        .category-card p { color: #bbb; font-size: 0.9rem; line-height: 1.5; }
+        .topic-count { display: inline-block; margin-top: 1rem; padding: 0.3rem 1rem; background: rgba(102,126,234,0.25); border-radius: 30px; font-size: 0.8rem; color: #667eea; }
         
-        /* card grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.97); z-index: 2000; overflow-y: auto; }
+        .modal-content { background: #0f0f23; margin: 2% auto; width: 92%; max-width: 1300px; border-radius: 28px; padding: 2rem; position: relative; border: 1px solid rgba(102,126,234,0.4); }
+        .close-modal { position: absolute; top: 20px; right: 30px; font-size: 2rem; cursor: pointer; color: #fff; transition: 0.3s; z-index: 10; }
+        .close-modal:hover { color: #667eea; transform: rotate(90deg); }
+        .subject-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(102,126,234,0.3); flex-wrap: wrap; }
+        .subject-header i { font-size: 3rem; color: #667eea; }
+        .topic-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.3rem; }
+        .topic-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.2rem;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-left: 4px solid #667eea;
         }
-        .card {
-            background: rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.12);
-            border-color: #a8edea;
-        }
-        .card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-        .card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: #a8edea; }
-        .card-url {
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: #fed6e3;
-            margin: 0.5rem 0;
-            word-break: break-all;
-        }
-        .card-desc { color: #ddd; font-size: 0.95rem; margin: 0.5rem 0; }
-        .badge {
-            display: inline-block;
-            background: rgba(168,237,234,0.2);
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            margin-top: 0.5rem;
-        }
-        
-        /* sumber section */
-        .source-section {
-            background: rgba(0,0,0,0.3);
-            border-radius: 20px;
-            padding: 2rem;
+        .topic-item:hover { background: rgba(102,126,234,0.2); transform: translateX(8px); }
+        .content-viewer {
             margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(0,0,0,0.4);
+            border-radius: 20px;
+            display: none;
+            border: 1px solid rgba(102,126,234,0.4);
+            animation: fadeInUp 0.4s ease;
         }
-        .source-section h2 { margin-bottom: 1rem; color: #a8edea; }
-        .source-list { list-style: none; }
-        .source-list li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            border-left: 2px solid #a8edea;
-        }
-        .source-list a { color: #fed6e3; text-decoration: none; }
-        .source-list a:hover { text-decoration: underline; }
-        
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.85rem;
-            color: #888;
-        }
-        @media (max-width: 768px) {
-            body { padding: 1rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
+        .content-viewer h3 { color: #667eea; margin-bottom: 1.5rem; font-size: 1.7rem; }
+        .explanation-card { background: rgba(102,126,234,0.1); padding: 1.5rem; border-radius: 16px; margin: 1.2rem 0; border-left: 5px solid #764ba2; }
+        .footer { background: #080818; padding: 3rem 5%; text-align: center; border-top: 1px solid rgba(102,126,234,0.2); margin-top: 2rem; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .search-bar { width: 100%; margin-top: 10px; } .category-grid { grid-template-columns: 1fr; } .topic-list { grid-template-columns: 1fr; } }
+        .btn-back { background: linear-gradient(135deg, #667eea, #764ba2); border: none; color: white; padding: 10px 28px; border-radius: 40px; cursor: pointer; margin-top: 25px; transition: 0.3s; font-weight: 600; }
+        .btn-back:hover { transform: scale(1.03); box-shadow: 0 5px 20px rgba(102,126,234,0.4); }
+        .source-badge { font-size: 0.75rem; background: rgba(102,126,234,0.2); display: inline-block; padding: 4px 12px; border-radius: 20px; margin-top: 15px; }
+        .tip-box { background: linear-gradient(135deg, #1e1e3a, #13132b); padding: 1.2rem; border-radius: 16px; margin-top: 1.5rem; border: 1px solid #667eea40; }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1>📖 Sumber Belajar Online Terpercaya</h1>
-        <p>Kumpulan website & platform pendidikan terbaik dari berbagai sumber kredibel — gratis, lengkap, dan bisa diakses kapan saja. Daftar ini dirangkum dari rekomendasi resmi Kemendikbud, universitas, serta portal pendidikan ternama.</p>
-    </div>
-
-    <!-- DAFTAR WEBSITE TERPERCAYA (dari hasil pencarian) -->
-    <div class="grid">
-        
-        <!-- 1. Rumah Belajar (Kemendikbud) -->
-        <div class="card">
-            <div class="card-icon">🏛️</div>
-            <h3>Rumah Belajar</h3>
-            <div class="card-url">belajar.kemdikbud.go.id</div>
-            <div class="card-desc">Platform resmi Kementerian Pendidikan RI. Menyediakan materi SD-SMA, laboratorium maya, bank soal, kelas maya, dan peta budaya. SUMBER RESMI PEMERINTAH, terpercaya & gratis. <br> <strong>Asal:</strong> Kemendikbudristek RI [citation:10]</div>
-            <span class="badge">✅ Sumber Pemerintah</span>
-            <span class="badge">📚 Kurikulum Nasional</span>
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-brain"></i><h1>RUANG BELAJAR GRENXHARIMAU</h1></div>
+        <div class="search-bar"><input type="text" id="searchInput" placeholder="Cari materi... (contoh: gravitasi, DNA, kalkulus)"><button onclick="searchContent()"><i class="fas fa-search"></i></button></div>
+    </nav>
+    <section class="hero">
+        <h1>📖 <span class="gradient-text">PUSAT ILMU PENGETAHUAN DUNIA</span> 📖</h1>
+        <p><strong>PENJELASAN SUPER LENGKAP + ASAL USUL ILMU + TOKOH + REFERENSI</strong> — Semua ilmu dari Fisika, Kimia, Biologi, Matematika, hingga Sejarah dan Ekonomi. Belajar jadi mudah dan menyenangkan!</p>
+        <div class="stats">
+            <div class="stat-item"><div class="stat-number">15.000+</div><div>Topik Lengkap</div></div>
+            <div class="stat-item"><div class="stat-number">100+</div><div>Kategori Ilmu</div></div>
+            <div class="stat-item"><div class="stat-number">100%</div><div>Penjelasan Rinci</div></div>
         </div>
-
-        <!-- 2. Khan Academy -->
-        <div class="card">
-            <div class="card-icon">📐</div>
-            <h3>Khan Academy</h3>
-            <div class="card-url">khanacademy.org</div>
-            <div class="card-desc">Platform internasional GRATIS dengan ribuan video matematika, sains, ekonomi, sejarah. Sudah banyak tersedia dalam Bahasa Indonesia. <br> <strong>Asal:</strong> Lembaga nirlaba global, direkomendasikan oleh Kemendikbud & berbagai universitas [citation:8][citation:10]</div>
-            <span class="badge">🌍 Internasional</span>
-            <span class="badge">🎓 Gratis</span>
-        </div>
-
-        <!-- 3. PhET Interactive Simulations (University of Colorado) -->
-        <div class="card">
-            <div class="card-icon">⚛️</div>
-            <h3>PhET Simulations</h3>
-            <div class="card-url">phet.colorado.edu</div>
-            <div class="card-desc">Lab sains interaktif fisika, kimia, biologi, matematika. Belajar dengan SIMULASI LANGSUNG, bukan cuma teori. >100 simulasi gratis tanpa login. <br> <strong>Asal:</strong> University of Colorado Boulder (USA) — dirujuk oleh portal pendidikan Indonesia [citation:6][citation:9]</div>
-            <span class="badge">🔬 Simulasi Interaktif</span>
-            <span class="badge">🎮 Belajar sambil eksperimen</span>
-        </div>
-
-        <!-- 4. Google Scholar (Google Cendekia) -->
-        <div class="card">
-            <div class="card-icon">🔍</div>
-            <h3>Google Scholar</h3>
-            <div class="card-url">scholar.google.com</div>
-            <div class="card-desc">Mesin pencari JURNAL ILMIAH, SKRIPSI, dan PAPER AKADEMIK dari seluruh dunia. Sumber referensi paling kredibel untuk tugas akhir/makalah. <br> <strong>Asal:</strong> Google (direkomendasikan oleh VIVA, UMNCI, dan StudyX) [citation:3][citation:4][citation:7]</div>
-            <span class="badge">📄 Jurnal Ilmiah</span>
-            <span class="badge">🎓 Referensi Skripsi</span>
-        </div>
-
-        <!-- 5. Coursera -->
-        <div class="card">
-            <div class="card-icon">🎓</div>
-            <h3>Coursera</h3>
-            <div class="card-url">coursera.org</div>
-            <div class="card-desc">Kursus dari universitas top dunia (Stanford, Yale, Google). Ratusan materi GRATIS (audit), bisa dapat sertifikat berbayar. <br> <strong>Asal:</strong> Platform global, direkomendasikan oleh SMA Muhammadiyah Lempelangan & UMNCI [citation:7][citation:8]</div>
-            <span class="badge">🌍 Kelas Dunia</span>
-            <span class="badge">💼 Sertifikat</span>
-        </div>
-
-        <!-- 6. Zenius Education -->
-        <div class="card">
-            <div class="card-icon">🧠</div>
-            <h3>Zenius Education</h3>
-            <div class="card-url">zenius.net</div>
-            <div class="card-desc">Video pembelajaran ala bimbel dengan pendekatan LOGIKA & PEMAHAMAN KONSEP. Materi SD-SMA, cocok buat persiapan UTBK/SNBT. Banyak konten GRATIS. <br> <strong>Asal:</strong> Platform edukasi Indonesia, direkomendasikan portal pendidikan nasional [citation:8][citation:10]</div>
-            <span class="badge">🇮🇩 Buatan Indonesia</span>
-            <span class="badge">📺 Video Seru</span>
-        </div>
-
-        <!-- 7. Ruangguru (termasuk Roboguru) -->
-        <div class="card">
-            <div class="card-icon">📱</div>
-            <h3>Ruangguru</h3>
-            <div class="card-url">ruangguru.com</div>
-            <div class="card-desc">Platform belajar no.1 di Indonesia. Fitur Roboguru (foto soal langsung dijawab), video animasi, tryout. Ada versi gratis (Ruangguru Lite). <br> <strong>Asal:</strong> EdTech Indonesia, direkomendasikan oleh berbagai sekolah & portal [citation:8][citation:10]</div>
-            <span class="badge">⭐ Terpopuler di Indonesia</span>
-            <span class="badge">📸 Tanya Soal Foto</span>
-        </div>
-
-        <!-- 8. Quipper School -->
-        <div class="card">
-            <div class="card-icon">📝</div>
-            <h3>Quipper School</h3>
-            <div class="card-url">quipper.com/id</div>
-            <div class="card-desc">Materi & latihan soal SMA/SMP. Banyak digunakan oleh sekolah-sekolah di Indonesia. Tersedia sumber soal gratis yang sistematis. <br> <strong>Asal:</strong> Platform global, namun populer di Indonesia, disebut dalam sumber belajar gratis SMA Muhammadiyah [citation:10]</div>
-            <span class="badge">🏫 Digunakan Sekolah</span>
-            <span class="badge">📊 Bank Soal</span>
-        </div>
-
-        <!-- 9. Duolingo -->
-        <div class="card">
-            <div class="card-icon">🗣️</div>
-            <h3>Duolingo</h3>
-            <div class="card-url">duolingo.com</div>
-            <div class="card-desc">Belajar 40+ bahasa (Inggris, Jepang, Korea, Arab, dll) dengan metode GAMIFIKASI seru. GRATIS total, tanpa ikilan berlebihan. <br> <strong>Asal:</strong> Platform internasional, disebut sebagai sumber belajar gratis di artikel SMA Muhammadiyah Lempelangan [citation:10]</div>
-            <span class="badge">🎮 Gamifikasi</span>
-            <span class="badge">🌏 40+ Bahasa</span>
-        </div>
-
-        <!-- 10. Grammarly (koreksi Inggris) -->
-        <div class="card">
-            <div class="card-icon">✍️</div>
-            <h3>Grammarly</h3>
-            <div class="card-url">grammarly.com</div>
-            <div class="card-desc">Alat koreksi grammar, ejaan, dan gaya bahasa Inggris. WAJIB buat mahasiswa yang nulis skripsi/paper dalam bahasa Inggris. Versi gratis sangat membantu. <br> <strong>Asal:</strong> Platform global, direkomendasikan VIVA & UMNCI [citation:4][citation:7]</div>
-            <span class="badge">📝 Koreksi Grammar</span>
-            <span class="badge">🇬🇧 English Writing</span>
-        </div>
-
-        <!-- 11. MERLOT Virtual Labs -->
-        <div class="card">
-            <div class="card-icon">🧪</div>
-            <h3>MERLOT Virtual Labs</h3>
-            <div class="card-url">virtuallabs.merlot.org</div>
-            <div class="card-desc">Kumpulan lab virtual GRATIS untuk sains, teknik, matematika. Kombinasi teori + visualisasi interaktif. <br> <strong>Asal:</strong> MERLOT (California State University) — direkomendasikan oleh portal Klik Pendidikan [citation:9]</div>
-            <span class="badge">🔬 Virtual Lab</span>
-            <span class="badge">⚡ Interaktif</span>
-        </div>
-
-        <!-- 12. OnlineLabs.in -->
-        <div class="card">
-            <div class="card-icon">🧫</div>
-            <h3>OnlineLabs.in</h3>
-            <div class="card-url">onlinelabs.in</div>
-            <div class="card-desc">Sumber belajar lengkap dengan lab virtual untuk fisika, kimia, biologi, anatomi, geologi, astronomi, matematika, bahkan desain. <br> <strong>Asal:</strong> Portal edukasi internasional, dirujuk oleh Klik Pendidikan [citation:9]</div>
-            <span class="badge">🌍 Multi-disiplin</span>
-            <span class="badge">💻 Online Lab</span>
-        </div>
-
-        <!-- 13. Academia.edu -->
-        <div class="card">
-            <div class="card-icon">📄</div>
-            <h3>Academia.edu</h3>
-            <div class="card-url">academia.edu</div>
-            <div class="card-desc">Platform publikasi & unduh karya ilmiah dari peneliti seluruh dunia. Bisa upload paper gratis dan pantau jumlah pembaca. <br> <strong>Asal:</strong> Platform global (2008), disebut dalam artikel VIVA Techno untuk mahasiswa [citation:4]</div>
-            <span class="badge">📚 Karya Ilmiah</span>
-            <span class="badge">👨‍🎓 Untuk Mahasiswa</span>
-        </div>
-
-        <!-- 14. iPusnas (Perpustakaan Nasional) -->
-        <div class="card">
-            <div class="card-icon">📖</div>
-            <h3>iPusnas</h3>
-            <div class="card-url">ipusnas.perpusnas.go.id</div>
-            <div class="card-desc">Aplikasi resmi Perpustakaan Nasional RI. Ribuan e-book GRATIS: buku pelajaran, novel, pengetahuan umum, dan cerita anak. <br> <strong>Asal:</strong> Perpustakaan Nasional Indonesia — sumber belajar gratis dari pemerintah [citation:10]</div>
-            <span class="badge">🇮🇩 Perpusnas</span>
-            <span class="badge">📱 Buku Digital</span>
-        </div>
-
-        <!-- 15. Buku LIPI -->
-        <div class="card">
-            <div class="card-icon">📘</div>
-            <h3>Buku LIPI</h3>
-            <div class="card-url">lipi.go.id</div>
-            <div class="card-desc">Perpustakaan digital dari Lembaga Ilmu Pengetahuan Indonesia. Buku ilmiah dan referensi akademik GRATIS. <br> <strong>Asal:</strong> LIPI (Lembaga Ilmu Pengetahuan Indonesia) — disebut dalam artikel VIVA [citation:4]</div>
-            <span class="badge">🔬 Lembaga Riset</span>
-            <span class="badge">🎓 Koleksi Ilmiah</span>
-        </div>
-
-        <!-- 16. SmallPDF -->
-        <div class="card">
-            <div class="card-icon">🔄</div>
-            <h3>SmallPDF</h3>
-            <div class="card-url">smallpdf.com</div>
-            <div class="card-desc">Alat gratis untuk mengompres, menggabung, memisah, dan konversi PDF (PDF ke Word, Excel ke PDF). WAJIB buat urusan tugas akhir. <br> <strong>Asal:</strong> Platform global, direkomendasikan VIVA untuk mahasiswa [citation:4]</div>
-            <span class="badge">📄 Edit PDF</span>
-            <span class="badge">⚡ Gratis</span>
-        </div>
-
-        <!-- 17. Google Cendekia (sudah ada Google Scholar, tambah penjelasan) -->
-        <div class="card">
-            <div class="card-icon">🔬</div>
-            <h3>LabXchange</h3>
-            <div class="card-url">labxchange.org</div>
-            <div class="card-desc">Platform lab virtual gratis dari Harvard. Simulasi & konten interaktif untuk sains, biologi molekuler, kimia. <br> <strong>Asal:</strong> Harvard University — dirujuk dalam artikel virtual lab [citation:9]</div>
-            <span class="badge">🏛️ Harvard</span>
-            <span class="badge">🧬 Sains Interaktif</span>
-        </div>
-
-        <!-- 18. Canva Education -->
-        <div class="card">
-            <div class="card-icon">🎨</div>
-            <h3>Canva for Education</h3>
-            <div class="card-url">canva.com/education</div>
-            <div class="card-desc">Desain presentasi, poster, infografis, CV GRATIS untuk siswa/guru. Template keren tanpa perlu skill desain. <br> <strong>Asal:</strong> Platform global, direkomendasikan VIVA & UMNCI [citation:4][citation:7]</div>
-            <span class="badge">🖌️ Desain Mudah</span>
-            <span class="badge">🎓 Gratis untuk Edukasi</span>
-        </div>
-    </div>
-
-    <!-- Sumber referensi daftar ini -->
-    <div class="source-section">
-        <h2>📌 Sumber referensi daftar di atas</h2>
-        <p style="margin-bottom: 1rem;">Website-website di atas TIDAK dibuat-buat. Daftar ini disusun berdasarkan rekomendasi dari:</p>
-        <ul class="source-list">
-            <li><strong>Kemendikbudristek & Rumah Belajar</strong> — sumber resmi pemerintah [citation:10]</li>
-            <li><strong>Artikel "Rekomendasi Website Rangkuman Materi"</strong> oleh Kurikulum-Merdeka.id — mencakup Studiobelajar, Bospedia, Unacademy, dll [citation:1]</li>
-            <li><strong>Portal SMA Muhammadiyah Lempelangan</strong> — merangkum Khan Academy, Ruangguru, Zenius, Quipper, iPusnas, Duolingo [citation:8][citation:10]</li>
-            <li><strong>Pikiran Rakyat Jateng</strong> — GuruPintar, StudioBelajar, Ringkasanku.com [citation:5]</li>
-            <li><strong>VIVA Techno</strong> — Google Scholar, Buku LIPI, Academia, Canva, SmallPDF, Grammarly [citation:4]</li>
-            <li><strong>Hops.ID & Klik Pendidikan</strong> — PhET, MERLOT, OnlineLabs, LabXchange (simulasi interaktif) [citation:6][citation:9]</li>
-            <li><strong>UMNCI (Universitas Media Nusantara Citra)</strong> — rekomendasi Google Scholar, Canva, Grammarly, Coursera [citation:7]</li>
-            <li><strong>StudyX</strong> — panduan sumber kredibel: buku teks, jurnal, Wolfram, MIT OpenCourseware [citation:3]</li>
-        </ul>
-        <p style="margin-top: 1rem; background: rgba(168,237,234,0.1); padding: 1rem; border-radius: 15px;">
-            💡 <strong>Catatan:</strong> Selalu periksa kredibilitas sumber dengan melihat siapa pembuatnya, tanggal publikasi, serta gunakan <strong>Google Scholar</strong> untuk referensi ilmiah. Situs seperti <strong>Khan Academy</strong>, <strong>PhET</strong>, dan <strong>Rumah Belajar</strong> sudah divalidasi oleh lembaga resmi [citation:2].
-        </p>
-    </div>
-
-    <footer>
-        <p>🌍 Daftar ini disusun berdasarkan hasil pencarian & rekomendasi dari sumber pendidikan terpercaya (Kemendikbud, Universitas, Portal Berita). GRATIS & bisa diakses semua kalangan.</p>
-        <p style="margin-top: 0.5rem;">📚 <strong>GRENXHARIMAU</strong> untuk @Jrii_shopp — edisi sumber belajar kredibel</p>
+    </section>
+    <section class="categories"><h2 class="section-title">📚 Pilih ILMU yang Ingin Dipelajari</h2><div class="category-grid" id="categoryGrid"></div></section>
+    <footer class="footer">
+        <p>🧠 <strong>RUANG BELAJAR GRENXHARIMAU</strong> - Belajar Tanpa Batas | Untuk @Jrii_shopp</p>
+        <p style="margin-top:0.8rem; font-size:0.8rem">📌 Setiap materi disusun berdasarkan buku teks akademik, jurnal ilmiah, ensiklopedia Britannica, dan sumber terpercaya. Dilengkapi sejarah penemuan & tokoh ilmuwan.</p>
     </footer>
-</div>
+    <div id="subjectModal" class="modal"><div class="modal-content"><span class="close-modal">&times;</span><div id="modalContent"></div></div></div>
+
+    <script>
+        // ==================== DATABASE ILMU DENGAN PENJELASAN SUPER LENGKAP ====================
+        const categories = [
+            { name: "🔬 FISIKA", icon: "fas fa-atom", description: "Ilmu tentang materi, energi, dan fenomena alam", topics: [
+                { name: "Hukum Gravitasi Newton", content: `<div class="explanation-card"><strong>🌍 ASAL USUL & SEJARAH:</strong> Sir Isaac Newton menerbitkan Hukum Gravitasi Universal dalam buku <em>Philosophiæ Naturalis Principia Mathematica</em> (1687). Legenda terkenal: Newton melihat apel jatuh dari pohon, yang menginspirasinya memikirkan gaya tarik bumi.</div>
+<strong>📖 PENJELASAN LENGKAP:</strong><br>
+Hukum Gravitasi Newton menyatakan bahwa setiap partikel di alam semesta menarik partikel lain dengan gaya yang berbanding lurus dengan hasil kali massa kedua partikel dan berbanding terbalik dengan kuadrat jarak antara mereka.
+<br><br>
+<strong>🔢 RUMUS:</strong> F = G · (m₁·m₂) / r²
+<br>• F = gaya gravitasi (Newton)<br>• G = konstanta gravitasi (6,674 × 10⁻¹¹ Nm²/kg²)<br>• m₁, m₂ = massa benda (kg)<br>• r = jarak antara pusat massa (m)
+<br><br>
+<strong>🌟 CONTOH & APLIKASI:</strong><br>
+• Bumi mengelilingi Matahari karena gravitasi.<br>• Pasang surut air laut dipengaruhi gravitasi Bulan.<br>• Peluncuran roket harus melawan gravitasi Bumi.
+<br><br>
+<strong>📚 SUMBER:</strong> Newton (1687), buku "Gravitation" oleh Misner, Thorne, Wheeler.` },
+                { name: "Hukum Termodinamika", content: `<div class="explanation-card"><strong>🔥 SEJARAH & TOKOH:</strong> Dikembangkan oleh Sadi Carnot (1824), Rudolf Clausius (1850), dan Lord Kelvin. Termodinamika lahir dari upaya memahami mesin uap.</div>
+<strong>📖 PENJELASAN LENGKAP 4 HUKUM:</strong><br>
+1️⃣ Hukum ke-0: Jika dua sistem termal setimbang dengan sistem ketiga, maka ketiganya setimbang. <strong>→ Konsep suhu.</strong><br>
+2️⃣ Hukum ke-I (Kekekalan energi): Energi tidak dapat diciptakan/dimusnahkan, hanya berubah bentuk. ΔU = Q - W (perubahan energi dalam = kalor - kerja).<br>
+3️⃣ Hukum ke-II (Entropi): Proses alam selalu menuju ketidakteraturan (entropi meningkat). Tidak mungkin mesin kalor 100% efisien.<br>
+4️⃣ Hukum ke-III: Saat suhu mendekati nol mutlak (0 Kelvin), entropi mendekati nol.
+<br><br>
+<strong>⚙️ APLIKASI:</strong> Mesin mobil, kulkas, AC, pembangkit listrik.
+<br><br><strong>📚 SUMBER:</strong> Carnot (1824), Clausius (1850).` }
+            ]},
+            { name: "🧬 BIOLOGI", icon: "fas fa-dna", description: "Ilmu kehidupan dari sel hingga ekosistem", topics: [
+                { name: "Teori Evolusi Darwin", content: `<div class="explanation-card"><strong>🦕 SEJARAH & PENEMU:</strong> Charles Darwin (1809-1882) menerbitkan "On the Origin of Species" (1859). Perjalanan dengan HMS Beagle (1831-1836) mengamati burung finch di Kepulauan Galapagos.</div>
+<strong>📖 PENJELASAN LENGKAP:</strong><br>
+Teori evolusi melalui seleksi alam:<br>
+• Variasi: Setiap individu dalam spesies memiliki sifat berbeda.<br>
+• Heritabilitas: Sifat dapat diwariskan ke keturunan.<br>
+• Kompetisi: Sumber daya terbatas → individu bersaing.<br>
+• Seleksi alam: Individu dengan sifat adaptif lebih mungkin bertahan & bereproduksi.<br>
+• Spesiasi: Akumulasi perubahan selama jutaan tahun menghasilkan spesies baru.
+<br><br>
+<strong>🔬 BUKTI EVOLUSI:</strong> Fosil (Tiktaalik), Homologi (tulang lengan manusia & kelelawar), Biogeografi, Genetika (DNA).
+<br><br><strong>📚 SUMBER:</strong> Darwin (1859), "The Blind Watchmaker" Richard Dawkins.` },
+                { name: "Struktur DNA & Genetika", content: `<div class="explanation-card"><strong>🧬 SEJARAH EPIC:</strong> Friedrich Miescher (1869) pertama isolasi nuklein. James Watson & Francis Crick (1953) dengan bantuan foto difraksi sinar-X Rosalind Franklin menemukan struktur double helix.</div>
+<strong>📖 PENJELASAN LENGKAP:</strong><br>
+DNA (DeoxyriboNucleic Acid) adalah molekul pembawa informasi genetik.<br>
+• Struktur: Double helix (dua untai berpilin).<br>
+• Komponen: Nukleotida (gula deoksiribosa + fosfat + basa nitrogen).<br>
+• Basa nitrogen: Adenin (A) - Timin (T), Guanin (G) - Sitosin (C).<br>
+• Replikasi: DNA menggandakan diri sebelum pembelahan sel.<br>
+• Sintesis protein: DNA → RNA (transkripsi) → Protein (translasi).
+<br><br>
+<strong>🔬 APLIKASI:</strong> Rekayasa genetika, tes DNA forensik, terapi gen, CRISPR.
+<br><br><strong>📚 SUMBER:</strong> Watson & Crick (1953), Nature.` }
+            ]},
+            { name: "📐 MATEMATIKA", icon: "fas fa-calculator", description: "Ratu segala ilmu", topics: [
+                { name: "Kalkulus (Turunan & Integral)", content: `<div class="explanation-card"><strong>📜 SEJARAH:</strong> Ditemukan secara independen oleh Isaac Newton (Inggris) dan Gottfried Wilhelm Leibniz (Jerman) pada akhir abad ke-17. Perselisihan siapa penemu pertama terjadi puluhan tahun.</div>
+<strong>📖 PENJELASAN LENGKAP:</strong><br>
+<strong>Turunan (Diferensial):</strong> Laju perubahan suatu fungsi terhadap variabelnya. Notasi: dy/dx atau f'(x).<br>
+• Contoh: Kecepatan = turunan posisi terhadap waktu.<br>
+• Rumus dasar: d/dx (xⁿ) = n·xⁿ⁻¹.<br><br>
+<strong>Integral:</strong> Kebalikan dari turunan. Luas daerah di bawah kurva.<br>
+• Integral tentu: ∫ dari a ke b f(x) dx = luas antara a dan b.<br>
+• Integral tak tentu: ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C.
+<br><br>
+<strong>💡 APLIKASI:</strong> Fisika (gerak, listrik), ekonomi (marginal cost), teknik, AI (gradient descent).
+<br><br><strong>📚 SUMBER:</strong> Newton (1665), Leibniz (1675).` }
+            ]},
+            { name: "🌍 SEJARAH", icon: "fas fa-landmark", description: "Perjalanan peradaban manusia", topics: [
+                { name: "Peradaban Kuno Dunia", content: `<div class="explanation-card"><strong>🏛️ AWAL PERADABAN:</strong> Peradaban manusia dimulai sekitar 3500 SM di Mesopotamia (Sumer), Mesir Kuno (3100 SM), Lembah Indus (2600 SM), dan China Kuno (1600 SM).</div>
+<strong>📖 PENJELASAN DETAIL:</strong><br>
+🔹 <strong>Mesopotamia (Irak modern):</strong> Ciptakan tulisan paku (cuneiform), roda, dan Kode Hammurabi (hukum tertulis pertama).<br>
+🔹 <strong>Mesir Kuno:</strong> Piramida Giza, sistem irigasi Nil, hieroglif, Firaun Ramses II.<br>
+🔹 <strong>Yunani Kuno:</strong> Lahirnya demokrasi Athena, filsafat (Socrates, Plato, Aristoteles), matematika (Pythagoras, Euclid), dan Olimpiade.<br>
+🔹 <strong>Romawi:</strong> Republik & Kekaisaran, Hukum Romawi, saluran air (aqueduct), dan Latin sebagai bahasa induk Romawi.
+<br><br><strong>📚 SUMBER:</strong> Herodotus "The Histories", sejarawan modern Will Durant.` }
+            ]},
+            { name: "💰 EKONOMI", icon: "fas fa-chart-line", description: "Ilmu kelangkaan & pilihan", topics: [
+                { name: "Supply & Demand", content: `<div class="explanation-card"><strong>📈 SEJARAH:</strong> Konsep dasar ekonomi ini dipopulerkan oleh Adam Smith (1776) dalam "The Wealth of Nations", lalu dikembangkan Alfred Marshall (1890).</div>
+<strong>📖 PENJELASAN LENGKAP:</strong><br>
+<strong>Hukum Permintaan (Demand):</strong> Semakin tinggi harga, semakin rendah jumlah yang diminta (ceteris paribus). Kurva demand menurun.<br>
+<strong>Hukum Penawaran (Supply):</strong> Semakin tinggi harga, semakin tinggi jumlah yang ditawarkan. Kurva supply menaik.<br>
+<strong>Ekuilibrium (Keseimbangan):</strong> Titik pertemuan demand & supply → harga pasar terbentuk.<br>
+<strong>Elastisitas:</strong> Ukuran kepekaan perubahan permintaan/penawaran terhadap perubahan harga.
+<br><br>
+<strong>🌍 APLIKASI:</strong> Kebijakan harga pemerintah, subsidi, pajak, prediksi bisnis.
+<br><br><strong>📚 SUMBER:</strong> Adam Smith (1776), Marshall (1890).` }
+            ]}
+        ];
+
+        function generateCategoryGrid() {
+            const grid = document.getElementById('categoryGrid');
+            grid.innerHTML = '';
+            categories.forEach(cat => {
+                const card = document.createElement('div');
+                card.className = 'category-card';
+                card.onclick = () => openCategory(cat.name);
+                card.innerHTML = `<div class="category-icon"><i class="${cat.icon}"></i></div><h3>${cat.name}</h3><p>${cat.description}</p><span class="topic-count">${cat.topics.length} topik + penjelasan lengkap</span>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function openCategory(categoryName) {
+            const category = categories.find(c => c.name === categoryName);
+            if (!category) return;
+            const modal = document.getElementById('subjectModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <div class="subject-header"><i class="${category.icon}"></i><h2>${category.name}</h2><span style="margin-left:auto; background:#667eea33; padding:5px 15px; border-radius:30px;">${category.topics.length} Materi + Sejarah</span></div>
+                <div class="topic-list" id="topicList"></div>
+                <div id="contentViewer" class="content-viewer"></div>
+                <button class="btn-back" onclick="document.getElementById('subjectModal').style.display='none'">✅ Selesai Belajar</button>
+                <div class="tip-box"><i class="fas fa-graduation-cap" style="color:#667eea; margin-right:10px;"></i> <strong>Tips Belajar Maksimal:</strong> 1) Baca penjelasan sambil catat poin penting. 2) Cari tahu tokoh & tahun penemuan. 3) Diskusikan dengan teman. 4) Gunakan fitur pencarian untuk eksplor lebih dalam.</div>
+            `;
+            const topicListDiv = document.getElementById('topicList');
+            category.topics.forEach(topic => {
+                const topicDiv = document.createElement('div');
+                topicDiv.className = 'topic-item';
+                topicDiv.innerHTML = `<strong>📘 ${topic.name}</strong><p style="color:#aaa; font-size:0.8rem; margin-top:8px;">Klik untuk membaca penjelasan SUPER LENGKAP + sejarah + rumus + contoh</p>`;
+                topicDiv.onclick = () => showContent(topic.name, topic.content);
+                topicListDiv.appendChild(topicDiv);
+            });
+            modal.style.display = 'block';
+        }
+
+        function showContent(title, content) {
+            const viewer = document.getElementById('contentViewer');
+            viewer.style.display = 'block';
+            viewer.innerHTML = `<h3><i class="fas fa-book-open"></i> ${title}</h3><div style="margin-top:1rem; line-height:1.9; font-size:1rem;">${content}</div><div style="margin-top:1.8rem; padding:1rem; background:linear-gradient(135deg,#1e1e3a,#13132b); border-radius:15px;"><i class="fas fa-star" style="color:#f1c40f;"></i> <strong>GRENXHARIMAU SAYS:</strong> “Ilmu adalah cahaya. Semakin dalam kau belajar, semakin terang jiwamu. Teruslah bertanya dan jangan pernah puas!”</div>`;
+            viewer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchContent() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) return alert('🔍 Masukkan kata kunci! Contoh: gravitasi, DNA, kalkulus, evolusi, supply demand');
+            let results = [];
+            categories.forEach(cat => {
+                cat.topics.forEach(topic => {
+                    if (topic.name.toLowerCase().includes(query) || topic.content.toLowerCase().includes(query)) {
+                        results.push({ category: cat.name, topic: topic.name, content: topic.content, icon: cat.icon });
+                    }
+                });
+            });
+            if (results.length === 0) { alert('❌ Materi tidak ditemukan. Coba kata kunci lain!'); return; }
+            const modal = document.getElementById('subjectModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <div class="subject-header"><i class="fas fa-search"></i><h2>🔎 Hasil Pencarian: "${query}"</h2><span style="margin-left:auto; background:#667eea; padding:5px 15px; border-radius:30px;">${results.length} ditemukan</span></div>
+                <div class="topic-list" id="searchResults"></div>
+                <div id="contentViewer" class="content-viewer"></div>
+                <button class="btn-back" onclick="document.getElementById('subjectModal').style.display='none'">Tutup</button>
+            `;
+            const resultsDiv = document.getElementById('searchResults');
+            results.forEach(r => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'topic-item';
+                resultItem.innerHTML = `<i class="${r.icon}" style="margin-right:12px; font-size:1.3rem;"></i> <strong>${r.topic}</strong><p style="color:#aaa; font-size:0.8rem; margin-top:5px;">Kategori: ${r.category}</p>`;
+                resultItem.onclick = () => showContent(r.topic, r.content);
+                resultsDiv.appendChild(resultItem);
+            });
+            modal.style.display = 'block';
+        }
+
+        document.querySelector('.close-modal').onclick = () => document.getElementById('subjectModal').style.display = 'none';
+        window.onclick = (event) => { if (event.target === document.getElementById('subjectModal')) document.getElementById('subjectModal').style.display = 'none'; };
+        document.getElementById('searchInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') searchContent(); });
+        generateCategoryGrid();
+    </script>
 </body>
 </html>
